@@ -1,0 +1,69 @@
+.NumbersButton {
+    background-color:#555A60;
+    border-radius: 5px;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.NumbersButton:hover {
+    transform: scale(1.05);
+    background-color: #4a4f54;
+}
+
+/* Base styles for all operator buttons */
+.OperatorButton {
+    background-color:rgba(244, 172, 65, 0.46);
+    color: #F4AB41;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.OperatorButton:hover {
+    background-color: #e59b2f;
+}
+
+/* Right operator buttons - circular shape and scale effect */
+.OperatorButtonRight {
+    composes: OperatorButton;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 10px;
+}
+
+.OperatorButtonRight:hover {
+    transform: scale(1.05);
+}
+
+/* Top operator buttons - only change colors */
+.OperatorButtonTop {
+    composes: OperatorButton;
+    background-color: #555A60;
+    color: #F4AB41;
+}
+
+.OperatorButtonTop:hover {
+    background-color: #4a4f54;
+}
+
+/* AC button - only change colors and add scale effect */
+.OperatorButtonAC {
+    composes: OperatorButton;
+    background-color:#555A60;
+    color: #F4AB41;
+
+}
+
+.OperatorButtonAC:hover {
+    transform: scale(1.05);
+    background-color: #4a4f54;
+}
