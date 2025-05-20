@@ -38,10 +38,12 @@
     justify-content: center;
     margin: auto;
     padding: 10px;
+    margin-top: 17%;
 }
 
 .OperatorButtonRight:hover {
     transform: scale(1.05);
+    color: #FFF
 }
 
 /* Top operator buttons - only change colors */
@@ -66,4 +68,20 @@
 .OperatorButtonAC:hover {
     transform: scale(1.05);
     background-color: #4a4f54;
+}
+
+.OperatorButtonEQ{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    width: 200%;
+    height: 80%;
+    border-radius: 50px;
+    background-color:rgba(244, 172, 65, 0.46);
+    color: #F4AB41;
+}
+
+.OperatorButtonEQ:hover {
+    transform: scale(1.05);
+    background-color: #e59b2f;
+    color: #FFF
 }

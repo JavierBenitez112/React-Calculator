@@ -18,7 +18,7 @@ export function OpButton({ dispatch, operator, type = OPERATOR_TYPES.DEFAULT }) 
             case OPERATOR_TYPES.AC:
                 return classes.OperatorButtonAC;
             case OPERATOR_TYPES.EQUAl:
-                return classes.OperatorButtonAC;
+                return classes.OperatorButtonEQ;
             default:
                 return classes.OperatorButton;
         }
