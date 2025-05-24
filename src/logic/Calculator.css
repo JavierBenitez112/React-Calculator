@@ -1,8 +1,11 @@
 .calculator{
-    display: flex;
+    display: fixed;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    height: 85vh;
+    width: 40vh;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 50px;
 }
 
 .numpad{
@@ -14,7 +17,65 @@
     grid-auto-columns: 1fr;
     background-color: #555A60;
     height: 60vh;
-    border-radius: 0px 0px 20px 20px;
+    border-radius: 0px 0px 50px 50px;
 }
 
+.OperatorButtonAC {
+    background-color: #555A60;
+    color: #F4AB41;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
 
+.OperatorButtonAC:hover {
+    transform: scale(1.05);
+    background-color: #4a4f54;
+}
+
+@keyframes buttonTextChange {
+    0% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(0) rotate(180deg);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1) rotate(360deg);
+        opacity: 1;
+    }
+}
+
+.button-text {
+    display: inline-block;
+    animation: buttonTextChange 0.3s ease;
+}
+
+.button-text svg {
+    height: 3.5vh;
+    color: #F4AB41;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.OperatorButtonEQ{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    width: 200%;
+    height: 80%;
+    border-radius: 50px;
+    background-color:rgba(244, 172, 65, 0.16);
+    color: #F4AB41;
+}
+
+.OperatorButtonEQ:hover {
+    transform: scale(1.05);
+    background-color: #e59b2f;
+    color: #FFF
+}

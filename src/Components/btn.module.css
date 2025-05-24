@@ -1,6 +1,6 @@
 .NumbersButton {
     background-color:#555A60;
-    border-radius: 5px;
+    border-radius: 50px;
     font-size: 20px;
     transition: background-color 0.3s ease;
     position: relative;
@@ -8,13 +8,12 @@
     height: 100%;
 }
 .NumbersButton:hover {
-    transform: scale(1.05);
     background-color: #4a4f54;
 }
 
 /* Base styles for all operator buttons */
 .OperatorButton {
-    background-color:rgba(244, 172, 65, 0.46);
+    background-color:rgba(244, 172, 65, 0.16);
     color: #F4AB41;
     font-size: 20px;
     transition: all 0.3s ease;
@@ -49,8 +48,8 @@
 /* Top operator buttons - only change colors */
 .OperatorButtonTop {
     composes: OperatorButton;
+    color: rgba(255, 255, 255, 0.87);
     background-color: #555A60;
-    color: #F4AB41;
 }
 
 .OperatorButtonTop:hover {
@@ -76,7 +75,7 @@
     width: 200%;
     height: 80%;
     border-radius: 50px;
-    background-color:rgba(244, 172, 65, 0.46);
+    background-color:rgba(244, 172, 65, 0.16);
     color: #F4AB41;
 }
 

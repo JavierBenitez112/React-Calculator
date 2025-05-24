@@ -1,4 +1,5 @@
 import classes from './btn.module.css'
+import { ACTIONS } from '../logic/Functions'
 
 export const OPERATOR_TYPES = {
     DEFAULT: 'default',
@@ -22,16 +23,27 @@ export function OpButton({ dispatch, operator, type = OPERATOR_TYPES.DEFAULT }) 
             default:
                 return classes.OperatorButton;
         }
+    };    const handleClick = () => {
+        if (operator === "+/-") {
+            dispatch({ type: ACTIONS.TOGGLE_SIGN });
+        } else {
+            dispatch({ type: ACTIONS.CHOOSE_OPERATOR, payload: {operator} });
+        }
     };
 
     return (
+        <button className={getButtonClass()} onClick={handleClick}>
+            {operator}
+        </button>
+    );
+}
+
+export function ACButton({ operator }) {
+    return (
         <div>
-            <button 
-                className={getButtonClass()} 
-                onClick={() => dispatch({ type: '', payload: { operator } })}
-            >
+            <button className={`${classes.OperatorButtonAC}`} onClick={() => dispatch({ type: ACTIONS.CLEAR })}>
                 {operator}
             </button>
         </div>
-    );
+    )
 }

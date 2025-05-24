@@ -1,11 +1,9 @@
 import './display.css'
 
-/*The textfield will be an array of numbres that accept the values being inputed from the numpad in the calculator */
 
-export default  function Display({ value }) {
-    return (
-        <div className='display'>
-            <h1 className='display-text'>{"0"}</h1>
+export default  function Display({ currentOperand, previousOperand, operator }) {    return (        <div className='display'>
+            <h1 className='display-text' data-testid="display-current">{currentOperand || "0"}</h1>
+            <h3 className='display-previous' data-testid="display-previous">{previousOperand} {operator}</h3>
         </div>
     )
 }
