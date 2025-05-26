@@ -1,4 +1,4 @@
-import { useReducer } from 'react'
+import { useReducer, useEffect } from 'react'
 import NumButton from '../Components/NumButton'
 import './Calculator.css'
 import { OpButton, OPERATOR_TYPES } from '../Components/OperationButton'
@@ -172,6 +172,47 @@ const Functions = () => {
         reducer,
         {}
     )
+
+    useEffect(() => {
+        const handleKeyPress = (e) => {
+            // Numbers and decimal
+            if (/^[0-9.]$/.test(e.key)) {
+                dispatch({ type: ACTIONS.ADD_NUMBER, payload: { number: e.key } })
+            }
+            // Operators
+            switch (e.key) {
+                case '+':
+                    dispatch({ type: ACTIONS.CHOOSE_OPERATOR, payload: { operator: '+' } })
+                    break
+                case '-':
+                    dispatch({ type: ACTIONS.CHOOSE_OPERATOR, payload: { operator: '-' } })
+                    break
+                case '*':
+                case 'x':
+                    dispatch({ type: ACTIONS.CHOOSE_OPERATOR, payload: { operator: '×' } })
+                    break
+                case '/':
+                    dispatch({ type: ACTIONS.CHOOSE_OPERATOR, payload: { operator: '÷' } })
+                    break
+                case '%':
+                    dispatch({ type: ACTIONS.CHOOSE_OPERATOR, payload: { operator: '%' } })
+                    break
+                case 'Enter':
+                case '=':
+                    dispatch({ type: ACTIONS.EVALUATE })
+                    break
+                case 'Backspace':
+                    dispatch({ type: ACTIONS.DELETE })
+                    break
+                case 'Escape':
+                    dispatch({ type: ACTIONS.CLEAR })
+                    break
+            }
+        }
+
+        window.addEventListener('keydown', handleKeyPress)
+        return () => window.removeEventListener('keydown', handleKeyPress)
+    }, [])
 
     const handleACDELClick = () => {
         if (currentOperand != null) {
